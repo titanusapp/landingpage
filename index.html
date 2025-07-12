@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Titanust specializes in providing high-quality applications on Shopify, HubSpot, Salesforce, and BigCommerce. Optimize your business with advanced technology solutions.">
+    <meta name="keywords"
+        content="Titanust, Shopify apps, HubSpot apps, Salesforce apps, BigCommerce apps, ecommerce solutions, CRM solutions">
+    <meta name="author" content="Titanust">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:title" content="Titanust - Professional Applications for Shopify, HubSpot, Salesforce">
+    <meta property="og:description"
+        content="Discover Titanust's powerful collection of applications. Optimize your business processes with solutions on Shopify, HubSpot, Salesforce, and BigCommerce.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://titanust.com">
+    <meta property="og:site_name" content="Titanust">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Titanust - Professional Applications for Shopify, HubSpot, Salesforce">
+    <meta name="twitter:description"
+        content="Discover Titanust's powerful collection of applications. Optimize your business processes with solutions on Shopify, HubSpot, Salesforce, and BigCommerce.">
+    <link rel="canonical" href="https://titanust.com">
+    <title>Titanust - Professional Applications for Shopify, HubSpot, Salesforce & BigCommerce</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-white: #FFFFFF;
+            --primary-black: #000000;
+            --ash-gray: #C0C0C0;
+            --mint-green: #D1FAE5;
+            --pastel-pink: #FFE0E0;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--primary-black);
+            background-color: var(--primary-white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--primary-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary-black);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--mint-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-black);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--mint-green) 0%, var(--pastel-pink) 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        /* Hiệu ứng hover mượt mà cho menu điều hướng */
+        .nav-menu a::after {
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Giao diện chỉ báo carousel */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--ash-gray);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .indicator.active {
+            background: var(--primary-black);
+        }
+
+        /* Chuyển động mượt mà cho thẻ sản phẩm */
+        .product-content {
+            transition: filter 0.3s ease;
+        }
+
+        .access-button {
+            transform: translateX(-50%) translateY(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .product-card:hover .access-button {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Hiệu ứng hover nâng cao cho thẻ tính năng */
+        .feature-card {
+            background: var(--primary-white);
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: #f9f9f9;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hiệu ứng hover cho thẻ ứng dụng */
+        .app-card {
+            border: 1px solid var(--ash-gray);
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-card:hover {
+            border-color: var(--mint-green);
+        }
+
+        /* Hiệu ứng hover cho liên kết footer */
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hiệu ứng hover cho nút CTA */
+        .cta-button:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-button:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apps Section */
+        .apps-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: var(--primary-black);
+        }
+
+        .apps-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .apps-container {
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .app-card {
+            min-width: 300px;
+            background: var(--primary-white);
+            border: 1px solid var(--ash-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 0 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--mint-green), var(--pastel-pink));
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-image {
+            width: 80px;
+            height: 80px;
+            background: var(--mint-green);
+            border-radius: 12px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-black);
+        }
+
+        .app-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-platform {
+            color: var(--ash-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .app-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--primary-white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--ash-gray);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--pastel-pink);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: var(--ash-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            color: var(--ash-gray);
+        }
+
+        /* Page Content */
+        .page-content {
+            margin-top: 80px;
+            padding: 80px 0;
+            min-height: 70vh;
+        }
+
+        .page-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .page-content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+        }
+
+        .page-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .page-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--primary-white);
+            border: 1px solid var(--ash-gray);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-image {
+            width: 80px;
+            height: 80px;
+            background: var(--mint-green);
+            border-radius: 12px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-black);
+        }
+
+        .product-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+
+        .product-content {
+            transition: filter 0.3s ease;
+        }
+
+        .product-card:hover .product-content {
+            filter: blur(2px);
+        }
+
+        .access-button {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .product-card:hover .access-button {
+            opacity: 1;
+        }
+
+        .product-card:hover {
+            overlay: 1;
+        }
+
+        /* Hide pages initially */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--primary-white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .app-card {
+                min-width: 280px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .apps-section,
+            .features,
+            .page-content {
+                padding: 60px 0;
+            }
+
+            .app-card {
+                min-width: 250px;
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo" onclick="showPage('home')">Titanust</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('products')">Products</a></li>
+                <li><a href="#" onclick="showPage('about')">About Us</a></li>
+                <li><a href="#" onclick="showPage('privacy')">Privacy Policy</a></li>
+                <li><a href="#" onclick="showPage('terms')">Terms of Service</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Optimal Application Solutions for Businesses</h1>
+                    <p>Titanust specializes in providing powerful and reliable applications on Shopify, HubSpot,
+                        Salesforce, and BigCommerce platforms to optimize your business processes.</p>
+                    <a href="#" class="cta-button" onclick="showPage('products')">Explore Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Section -->
+        <section class="apps-section">
+            <div class="container">
+                <h2 class="section-title">Our Featured Applications</h2>
+                <div class="apps-carousel">
+                    <div class="apps-container" id="appsContainer">
+                        <div class="app-card">
+                            <div class="app-image">S</div>
+                            <h3>Shopify Sales Booster</h3>
+                            <p class="app-platform">Shopify</p>
+                            <p class="app-description">Boost sales with intelligent marketing tools and conversion rate
+                                optimization.</p>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-image">H</div>
+                            <h3>HubSpot CRM Enhanced</h3>
+                            <p class="app-platform">HubSpot</p>
+                            <p class="app-description">Enhance customer management efficiency with advanced automation
+                                features.</p>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-image">SF</div>
+                            <h3>Salesforce Analytics Pro</h3>
+                            <p class="app-platform">Salesforce</p>
+                            <p class="app-description">Analyze sales data in detail with intuitive dashboards and smart
+                                reports.</p>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-image">B</div>
+                            <h3>BigCommerce Optimizer</h3>
+                            <p class="app-platform">BigCommerce</p>
+                            <p class="app-description">Optimize website performance and customer shopping experience.
+                            </p>
+                        </div>
+                        <div class="app-card">
+                            <div class="app-image">M</div>
+                            <h3>Multi-Platform Sync</h3>
+                            <p class="app-platform">Multi-Platform</p>
+                            <p class="app-description">Seamlessly and automatically sync data across platforms.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn" onclick="slideCarousel(-1)">‹</button>
+                    <button class="carousel-btn" onclick="slideCarousel(1)">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Titanust?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>High Performance</h3>
+                        <p>Applications are optimized for fast processing speed and high stability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Cost Savings</h3>
+                        <p>Help reduce operational costs with efficient solutions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Time Savings</h3>
+                        <p>Streamline processes to save time for your team.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Easy to Use</h3>
+                        <p>User-friendly interface with detailed guides and 24/7 support.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Quick Integration</h3>
+                        <p>Install and integrate in just a few minutes with step-by-step instructions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>High Security</h3>
+                        <p>Ensure data safety with top security standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <div class="page-content container">
+            <h1>Our Products</h1>
+            <p>Titanust is proud to bring you a diverse and powerful collection of applications on leading platforms.
+            </p>
+
+            <h2>Shopify Apps</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+            </div>
+
+            <h2>HubSpot Apps</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+            </div>
+
+            <h2>Salesforce Apps</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+            </div>
+
+            <h2>BigCommerce Apps</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-content">
+                        <div class="product-image">S</div>
+                        <h3>Shopify Sales Booster</h3>
+                        <p>Increase conversion rates with smart marketing tools.</p>
+                    </div>
+                    <a href="#" class="access-button">Access App</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="page-content container">
+            <h1>About Us</h1>
+            <p>Titanust was founded with the mission to bring the most optimal technology solutions to modern
+                businesses.</p>
+
+            <h2>Vision</h2>
+            <p>To become the leading provider of applications on e-commerce and customer management platforms, helping
+                businesses optimize operational efficiency and achieve sustainable growth.</p>
+
+            <h2>Mission</h2>
+            <p>We are committed to developing and providing high-quality, easy-to-use, and effective applications,
+                helping customers achieve their business goals quickly and sustainably.</p>
+
+            <h2>Core Values</h2>
+            <ul>
+                <li><strong>Quality:</strong> Committed to delivering the highest quality products</li>
+                <li><strong>Innovation:</strong> Continuously innovating and improving technology</li>
+                <li><strong>Customer Focus:</strong> Putting customer benefits first</li>
+                <li><strong>Trust:</strong> Building long-term relationships based on trust</li>
+            </ul>
+
+            <h2>Our Team</h2>
+            <p>Titanust boasts a team of experienced experts in application development, with deep expertise in
+                Shopify, HubSpot, Salesforce, and BigCommerce platforms.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need support, please contact us:</p>
+            <ul>
+                <li>Email: info@titanust.com</li>
+                <li>Phone: +84 123 456 789</li>
+                <li>Address: Hanoi, Vietnam</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Privacy Page -->
+    <div id="privacy" class="page">
+        <div class="page-content container">
+            <h1>Privacy Policy</h1>
+            <p>We are committed to protecting our customers' personal information and data to the best of our ability.
+            </p>
+
+            <h2>Information Collection</h2>
+            <p>We collect necessary information to provide the best service to our customers, including:</p>
+            <ul>
+                <li>Contact information (name, email, phone number)</li>
+                <li>Business information (company name, industry)</li>
+                <li>Service usage information</li>
+            </ul>
+
+            <h2>Use of Information</h2>
+            <p>The collected information is used to:</p>
+            <ul>
+                <li>Provide and improve services</li>
+                <li>Support customers</li>
+                <li>Send notifications about products and services</li>
+                <li>Comply with legal requirements</li>
+            </ul>
+
+            <h2>Information Security</h2>
+            <p>We implement appropriate technical and organizational security measures to protect personal information
+                from unauthorized access, use, disclosure, alteration, or destruction.</p>
+
+            <h2>Information Sharing</h2>
+            <p>We do not sell, rent, or share personal information with third parties unless we have your consent or it
+                is required by law.</p>
+
+            <h2>User Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access and update your personal information</li>
+                <li>Request deletion of your personal information</li>
+                <li>Withdraw consent for data processing</li>
+                <li>File complaints regarding data processing</li>
+            </ul>
+
+            <h2>Contact</h2>
+            <p>If you have any questions about this privacy policy, please contact us at: privacy@titanust.com</p>
+        </div>
+    </div>
+
+    <!-- Terms Page -->
+    <div id="terms" class="page">
+        <div class="page-content container">
+            <h1>Terms of Service</h1>
+            <p>By using Titanust's services, you agree to comply with the following terms and conditions.</p>
+
+            <h2>General Terms</h2>
+            <p>These terms apply to the use of all applications and services provided by Titanust.</p>
+
+            <h2>User Rights and Obligations</h2>
+            <p>Users have the right to:</p>
+            <ul>
+                <li>Use the applications as intended</li>
+                <li>Receive technical support from Titanust</li>
+                <li>Be notified of updates and changes</li>
+            </ul>
+
+            <p>Users are obligated to:</p>
+            <ul>
+                <li>Comply with the terms of use</li>
+                <li>Not use the service for illegal purposes</li>
+                <li>Secure login information</li>
+                <li>Pay any applicable fees on time</li>
+            </ul>
+
+            <h2>Refund Policy</h2>
+            <p>We offer a 30-day refund policy if you are not satisfied with the product, provided there is no violation
+                of the terms of use.</p>
+
+            <h2>Limitation of Liability</h2>
+            <p>Titanust is not responsible for indirect, incidental, or consequential damages arising from the use of
+                the service.</p>
+
+            <h2>Terms Modification</h2>
+            <p>We reserve the right to modify these terms at any time. Changes will take effect upon notification on the
+                website.</p>
+
+            <h2>Applicable Law</h2>
+            <p>These terms are governed by Vietnamese law. Any disputes will be resolved in a competent court.</p>
+
+            <h2>Contact</h2>
+            <p>If you have questions about the terms of service, please contact: legal@titanust.com</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Titanust</h3>
+                    <p>Optimal application solutions for modern businesses</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Products</h3>
+                    <p><a href="#" onclick="showPage('products')">Shopify Apps</a></p>
+                    <p><a href="#" onclick="showPage('products')">HubSpot Apps</a></p>
+                    <p><a href="#" onclick="showPage('products')">Salesforce Apps</a></p>
+                    <p><a href="#" onclick="showPage('products')">BigCommerce Apps</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <p><a href="#" onclick="showPage('about')">About Us</a></p>
+                    <p><a href="#" onclick="showPage('privacy')">Privacy Policy</a></p>
+                    <p><a href="#" onclick="showPage('terms')">Terms of Service</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: info@titanust.com</p>
+                    <p>Phone: +84 123 456 789</p>
+                    <p>Address: Hanoi, Vietnam</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Titanust. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Chuyển đến slide cụ thể
+        function goToSlide(index) {
+            currentSlide = index;
+            const container = document.getElementById('appsContainer');
+            container.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+            updateIndicators();
+        }
+
+        // Cập nhật trạng thái chỉ báo
+        function updateIndicators() {
+            document.querySelectorAll('.indicator').forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Hàm tự động trượt
+        function autoSlide() {
+            const container = document.getElementById('appsContainer');
+            const totalCards = container.children.length;
+            const maxSlide = Math.max(0, totalCards - 3);
+            currentSlide++;
+            if (currentSlide > maxSlide) {
+                currentSlide = 0;
+            }
+            container.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+            updateIndicators();
+        }
+
+        // Thiết lập interval tự động trượt
+        let autoSlideInterval = setInterval(autoSlide, 5000);
+
+        // Tạm dừng khi hover
+        const carousel = document.querySelector('.apps-carousel');
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        carousel.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(autoSlide, 5000);
+        });
+
+        // Cập nhật hàm slideCarousel để bao gồm chỉ báo
+        function slideCarousel(direction) {
+            const container = document.getElementById('appsContainer');
+            const totalCards = container.children.length;
+            const maxSlide = Math.max(0, totalCards - 3);
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide > maxSlide) {
+                currentSlide = maxSlide;
+            }
+            container.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+            updateIndicators();
+        }
+        let currentSlide = 0;
+        const cardWidth = 320; // 300px + 20px margin
+
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Close mobile menu
+            document.getElementById('navMenu').classList.remove('active');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        function slideCarousel(direction) {
+            const container = document.getElementById('appsContainer');
+            const totalCards = container.children.length;
+            const maxSlide = Math.max(0, totalCards - 3); // Show 3 cards at a time
+
+            currentSlide += direction;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            } else if (currentSlide > maxSlide) {
+                currentSlide = maxSlide;
+            }
+
+            container.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        }
+
+        // Auto-slide carousel
+        setInterval(() => {
+            const container = document.getElementById('appsContainer');
+            const totalCards = container.children.length;
+            const maxSlide = Math.max(0, totalCards - 3);
+
+            currentSlide++;
+            if (currentSlide > maxSlide) {
+                currentSlide = 0;
+            }
+
+            container.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        }, 5000);
+
+        // Add smooth scrolling for internal links
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add loading animation
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.app-card, .feature-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+
+        // Add header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--primary-white)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('navMenu').classList.remove('active');
+            }
+        });
+
+        // Add structured data for SEO
+        const structuredData = {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Titanust",
+            "description": "Specializes in providing high-quality applications on Shopify, HubSpot, Salesforce, and BigCommerce",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "VND"
+            },
+            "provider": {
+                "@type": "Organization",
+                "name": "Titanust",
+                "url": "https://titanust.com"
+            }
+        };
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+    </script>
+</body>
+
+</html>
